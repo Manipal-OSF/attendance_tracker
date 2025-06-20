@@ -22,7 +22,10 @@ body {
     font-size: 1.5vw;
     color: #EE441C;
 }
-
+.boderline {
+    height: 0.1vh;
+    background-color: #EE441C;
+}
 .hero {
     position: relative;
     height: 92.5vh;
