@@ -31,8 +31,7 @@ body {
 .hero h1 {
     margin: 0;
     position: absolute;
-    bottom: 1vh;
-    padding-left: 0.5vh;
+    bottom: 2vh;
     font-size: 15vw;
     font-weight: 300;
     background: linear-gradient(91deg, #EE441C 22.18%, #CB3A18 99.55%);
