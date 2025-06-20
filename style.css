@@ -9,6 +9,7 @@ body {
     padding: 1.75vw;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .navbutt {
@@ -18,14 +19,27 @@ body {
 }
 
 .navbutt a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     font-size: 1.5vw;
     color: #EE441C;
 }
+
+#home {
+    height: 3.5vh;
+    width: 6vw;
+    background-color: #EE441C;
+    color: #FFF2E8;
+    border-radius: 1.75vh;
+}
+
 .boderline {
     height: 0.1vh;
     background-color: #EE441C;
 }
+
 .hero {
     position: relative;
     height: 92.5vh;
