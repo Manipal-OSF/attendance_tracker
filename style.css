@@ -35,11 +35,6 @@ body {
     border-radius: 2vh;
 }
 
-.boderline {
-    height: 0.1vh;
-    background-color: #EE441C;
-}
-
 .hero {
     position: relative;
     height: 92.5vh;
