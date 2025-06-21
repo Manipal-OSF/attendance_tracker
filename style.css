@@ -5,11 +5,16 @@ body {
 }
 
 .nav {
-    height: 3vh;
-    padding: 1.75vw;
+    position: fixed;
+    top: 0;
+    width: 97vw;
+    height: 7.5vh;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
 }
 
 .navbutt {
@@ -35,19 +40,78 @@ body {
     border-radius: 2vh;
 }
 
+.navblur {
+    position: fixed;
+    height: 7.5vh;
+    top: 0;
+    width: 100vw;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+}
+
+.b {
+    width: 100vw;
+    height: 0.75vh;
+}
+
+#b0 {
+    backdrop-filter: blur(10px);
+}
+
+#b1 {
+    backdrop-filter: blur(9px);
+}
+
+#b2 {
+    backdrop-filter: blur(8px);
+}
+
+#b3 {
+    backdrop-filter: blur(7px);
+}
+
+#b4 {
+    backdrop-filter: blur(6px);
+}
+
+#b5 {
+    backdrop-filter: blur(5px);
+}
+
+#b6 {
+    backdrop-filter: blur(4px);
+}
+
+#b7 {
+    backdrop-filter: blur(3px);
+}
+
+#b8 {
+    backdrop-filter: blur(2px);
+}
+
+#b9 {
+    backdrop-filter: blur(1px);
+}
+
 .hero {
     position: relative;
-    height: 92.5vh;
+    height: 100vh;
 }
 
 .hero h1 {
     margin: 0;
     position: absolute;
-    bottom: 2vh;
+    bottom: 0vh;
     font-size: 15vw;
     font-weight: 300;
     background: linear-gradient(91deg, #EE441C 22.18%, #CB3A18 99.55%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.content {
+    height: 100vh;
 }
