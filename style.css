@@ -11,16 +11,15 @@ body {
     height: 7.5vh;
     padding-left: 1.5vw;
     padding-right: 1.5vw;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
     z-index: 100;
 }
 
 .logo {
-    flex-shrink: 0;
-    position: absolute;
-    left: 1.5vw;
+    grid-column: 1;
+    justify-self: start;
 }
 
 .logo img {
@@ -29,10 +28,21 @@ body {
     display: block;
 }
 
+.user-profile {
+    grid-column: 3;
+    justify-self: end;
+}
+
+.user-profile img {
+    height: 120px;
+    width: auto;
+    cursor: pointer;
+}
+
 .navbutt {
+    grid-column: 2;
     display: flex;
     justify-content: center;
-    width: 30vw;
     gap: 2rem;
 }
 
