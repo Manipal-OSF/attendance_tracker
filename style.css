@@ -35,8 +35,12 @@ body {
 
 .user-profile img {
     height: 120px;
-    width: auto;
+    width: 120px;
     cursor: pointer;
+    border-radius: 50%;
+    object-fit: cover; 
+    filter: brightness(0.8) saturate(2) hue-rotate(15deg);
+    -webkit-filter: brightness(0.8) saturate(2) hue-rotate(15deg);
 }
 
 .navbutt {
