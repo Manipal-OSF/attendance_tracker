@@ -12,15 +12,28 @@ body {
     padding-left: 1.5vw;
     padding-right: 1.5vw;
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
     z-index: 100;
 }
 
+.logo {
+    flex-shrink: 0;
+    position: absolute;
+    left: 1.5vw;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
 .navbutt {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 30vw;
+    gap: 2rem;
 }
 
 .navbutt a {
