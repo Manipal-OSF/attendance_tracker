@@ -43,6 +43,26 @@ body {
     -webkit-filter: brightness(0.8) saturate(2) hue-rotate(15deg);
 }
 
+.profile-hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-left: 5vw;
+    margin-top: 7.5vh;
+}
+
+.profile-hero h1 {
+    margin: 0;
+    font-size: 15vw;
+    font-weight: 300;
+    background: linear-gradient(91deg, #EE441C 22.18%, #CB3A18 99.55%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
 .navbutt {
     grid-column: 2;
     display: flex;
