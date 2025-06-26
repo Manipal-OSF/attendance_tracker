@@ -1,7 +1,8 @@
 body {
-    margin: 0;
-    font-family: "Inter", sans-serif;
-    background: #FFF2E8;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #000;
+  color: white; 
 }
 
 .nav {
@@ -15,6 +16,8 @@ body {
     grid-template-columns: auto 1fr auto;
     align-items: center;
     z-index: 100;
+    background: rgba(0, 0, 0, 0.3); 
+    backdrop-filter: blur(10px); 
 }
 
 .logo {
@@ -26,6 +29,7 @@ body {
     height: 50px;
     width: auto;
     display: block;
+    filter: brightness(1.2) contrast(1.1); 
 }
 
 .user-profile {
@@ -39,8 +43,9 @@ body {
     cursor: pointer;
     border-radius: 50%;
     object-fit: cover; 
-    filter: brightness(0.8) saturate(2) hue-rotate(15deg);
-    -webkit-filter: brightness(0.8) saturate(2) hue-rotate(15deg);
+    filter: brightness(1.1) saturate(1.5) hue-rotate(15deg); 
+    -webkit-filter: brightness(1.1) saturate(1.5) hue-rotate(15deg);
+    border: 2px solid rgba(238, 68, 28, 0.3); 
 }
 
 .profile-hero {
@@ -56,20 +61,21 @@ body {
     margin: 0;
     font-size: 15vw;
     font-weight: 300;
-    background: linear-gradient(91deg, #EE441C 22.18%, #CB3A18 99.55%);
+    background: linear-gradient(91deg, #FF6B4A 22.18%, #EE441C 99.55%); 
     background-size: 250% 100%;  
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shimmer 5s ease-in-out infinite;  
+    animation: shimmer 5s ease-in-out infinite;
+    text-shadow: 0 0 30px rgba(255, 107, 74, 0.5); 
 }
-
 
 .navbutt {
     grid-column: 2;
     display: flex;
     justify-content: center;
     gap: 2rem;
+    align-items: center;
 }
 
 .navbutt a {
@@ -78,7 +84,19 @@ body {
     justify-content: center;
     text-decoration: none;
     font-size: 1.5vw;
-    color: #EE441C;
+    color: #FF6B4A; 
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(255, 107, 74, 0.3); 
+}
+
+.navbutt a:hover {
+    color: #FFFFFF;
+    background: rgba(238, 68, 28, 0.2);
+    text-shadow: 0 0 15px rgba(255, 107, 74, 0.6);
+    transform: translateY(-2px);
 }
 
 .navblur {
@@ -96,67 +114,42 @@ body {
     height: 0.75vh;
 }
 
-#b0 {
-    backdrop-filter: blur(10px);
-}
-
-#b1 {
-    backdrop-filter: blur(9px);
-}
-
-#b2 {
-    backdrop-filter: blur(8px);
-}
-
-#b3 {
-    backdrop-filter: blur(7px);
-}
-
-#b4 {
-    backdrop-filter: blur(6px);
-}
-
-#b5 {
-    backdrop-filter: blur(5px);
-}
-
-#b6 {
-    backdrop-filter: blur(4px);
-}
-
-#b7 {
-    backdrop-filter: blur(3px);
-}
-
-#b8 {
-    backdrop-filter: blur(2px);
-}
-
-#b9 {
-    backdrop-filter: blur(1px);
-}
+#b0 { backdrop-filter: blur(10px); }
+#b1 { backdrop-filter: blur(9px); }
+#b2 { backdrop-filter: blur(8px); }
+#b3 { backdrop-filter: blur(7px); }
+#b4 { backdrop-filter: blur(6px); }
+#b5 { backdrop-filter: blur(5px); }
+#b6 { backdrop-filter: blur(4px); }
+#b7 { backdrop-filter: blur(3px); }
+#b8 { backdrop-filter: blur(2px); }
+#b9 { backdrop-filter: blur(1px); }
 
 .hero {
     position: relative;
     height: 100vh;
+    display: flex;
+    align-items: flex-end; 
+    padding-left: 5vw;
+    padding-bottom: 10vh; 
 }
 
 .hero h1 {
     margin: 0;
-    position: absolute;
-    bottom: 0vh;
     font-size: 15vw;
     font-weight: 300;
-    background: linear-gradient(91deg, #EE441C 22.18%, #CB3A18 99.55%);
+    background: linear-gradient(91deg, #FF6B4A 22.18%, #EE441C 99.55%); 
     background-size: 250% 100%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shimmer 5s ease-in-out infinite;
+    text-shadow: 0 0 30px rgba(255, 107, 74, 0.5); 
 }
 
 .content {
     height: 100vh;
+    color: white; 
 }
 
 @keyframes shimmer {
@@ -165,5 +158,46 @@ body {
     }
     100% {
         background-position: 250% 0;
+    }
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #EE441C #000;
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #000;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: linear-gradient(91deg, #EE441C 22.18%, #CB3A18 99.55%);
+    border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(91deg, #FF6B4A 22.18%, #EE441C 99.55%);
+}
+
+h1, h2, h3, h4, h5, h6, p, span, div {
+    color: inherit;
+}
+
+.nav {
+    animation: navFadeIn 1s ease-out;
+}
+
+@keyframes navFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
