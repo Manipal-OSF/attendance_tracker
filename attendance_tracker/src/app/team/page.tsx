@@ -23,7 +23,6 @@ export default function Team() {
         </div>
       </div>
       
-      {/* Same navblur structure */}
       <div className="navblur">
         <div className="b" id="b0"></div>
         <div className="b" id="b1"></div>
