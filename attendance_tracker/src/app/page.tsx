@@ -1,4 +1,5 @@
 'use client'
+import ShinyText from '@/components/ShinyText'
 
 export default function Home() {
   return (
@@ -36,7 +37,7 @@ export default function Home() {
       </div>
 
       <div className="hero">
-        <h1>Manipal OSF</h1>
+        <h1 className="shiny-text">Manipal OSF</h1>
       </div>
 
       <div className="content">
