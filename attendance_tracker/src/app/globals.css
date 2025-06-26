@@ -57,9 +57,11 @@ body {
     font-size: 15vw;
     font-weight: 300;
     background: linear-gradient(91deg, #EE441C 22.18%, #CB3A18 99.55%);
+    background-size: 250% 100%;  
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: shimmer 5s ease-in-out infinite;  
 }
 
 
@@ -164,17 +166,4 @@ body {
     100% {
         background-position: 250% 0;
     }
-}
-
-.animate-shimmer {
-    animation: shimmer 5s ease-in-out infinite;
-}
-
-.shiny-text {
-    background: linear-gradient(91deg, #EE441C 22.18%, #CB3A18 99.55%);
-    background-size: 250% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 5s ease-in-out infinite;
 }

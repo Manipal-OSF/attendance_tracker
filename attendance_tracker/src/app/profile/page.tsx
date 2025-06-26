@@ -31,7 +31,7 @@ export default function Profile() {
       </div>
 
       <div className="profile-hero">
-        <h1>My Profile</h1>
+        <h1 className="shiny-text">My Profile</h1>
       </div>
     </main>
   );
