@@ -3,7 +3,6 @@
 export default function Team() {
   return (
     <main>
-      {/* Same nav structure */}
       <div className="nav">
         <div className="logo">
           <img src="/logo.png" alt="OSF Logo" />
