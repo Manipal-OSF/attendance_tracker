@@ -1,8 +1,9 @@
 'use client'
 
-export default function Home() {
+export default function Team() {
   return (
     <main>
+      {/* Same nav structure */}
       <div className="nav">
         <div className="logo">
           <img src="/logo.png" alt="OSF Logo" />
@@ -22,6 +23,7 @@ export default function Home() {
         </div>
       </div>
       
+      {/* Same navblur structure */}
       <div className="navblur">
         <div className="b" id="b0"></div>
         <div className="b" id="b1"></div>
@@ -36,7 +38,7 @@ export default function Home() {
       </div>
 
       <div className="hero">
-        <h1>Manipal OSF</h1>
+        <h1>Team</h1>
       </div>
 
       <div className="content">

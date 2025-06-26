@@ -1,6 +1,6 @@
 'use client'
 
-export default function Home() {
+export default function Profile() {
   return (
     <main>
       <div className="nav">
@@ -13,12 +13,7 @@ export default function Home() {
           <a href="/team">team</a>
         </div>
         <div className="user-profile">
-          <img 
-            src="/user_icon.png" 
-            alt="User Profile" 
-            onClick={() => window.location.href = '/profile'}
-            style={{ cursor: 'pointer' }}
-          />
+          <img src="/user_icon.png" alt="User Profile" />
         </div>
       </div>
       
@@ -35,11 +30,8 @@ export default function Home() {
         <div className="b" id="b9"></div>
       </div>
 
-      <div className="hero">
-        <h1>Manipal OSF</h1>
-      </div>
-
-      <div className="content">
+      <div className="profile-hero">
+        <h1>My Profile</h1>
       </div>
     </main>
   );

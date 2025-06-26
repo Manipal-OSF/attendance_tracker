@@ -1,26 +1,156 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #FFF2E8;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 97vw;
+    height: 7.5vh;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    grid-column: 1;
+    justify-self: start;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.user-profile {
+    grid-column: 3;
+    justify-self: end;
+}
+
+.user-profile img {
+    height: 120px;
+    width: 120px;
+    cursor: pointer;
+    border-radius: 50%;
+    object-fit: cover; 
+    filter: brightness(0.8) saturate(2) hue-rotate(15deg);
+    -webkit-filter: brightness(0.8) saturate(2) hue-rotate(15deg);
+}
+
+.profile-hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-left: 5vw;
+    margin-top: 7.5vh;
+}
+
+.profile-hero h1 {
+    margin: 0;
+    font-size: 15vw;
+    font-weight: 300;
+    background: linear-gradient(91deg, #EE441C 22.18%, #CB3A18 99.55%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.navbutt {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.navbutt a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5vw;
+    color: #EE441C;
+}
+
+.navblur {
+    position: fixed;
+    height: 7.5vh;
+    top: 0;
+    width: 100vw;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+}
+
+.b {
+    width: 100vw;
+    height: 0.75vh;
+}
+
+#b0 {
+    backdrop-filter: blur(10px);
+}
+
+#b1 {
+    backdrop-filter: blur(9px);
+}
+
+#b2 {
+    backdrop-filter: blur(8px);
+}
+
+#b3 {
+    backdrop-filter: blur(7px);
+}
+
+#b4 {
+    backdrop-filter: blur(6px);
+}
+
+#b5 {
+    backdrop-filter: blur(5px);
+}
+
+#b6 {
+    backdrop-filter: blur(4px);
+}
+
+#b7 {
+    backdrop-filter: blur(3px);
+}
+
+#b8 {
+    backdrop-filter: blur(2px);
+}
+
+#b9 {
+    backdrop-filter: blur(1px);
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+}
+
+.hero h1 {
+    margin: 0;
+    position: absolute;
+    bottom: 0vh;
+    font-size: 15vw;
+    font-weight: 300;
+    background: linear-gradient(91deg, #EE441C 22.18%, #CB3A18 99.55%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.content {
+    height: 100vh;
 }

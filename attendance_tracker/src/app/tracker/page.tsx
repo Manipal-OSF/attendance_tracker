@@ -1,6 +1,6 @@
 'use client'
 
-export default function Home() {
+export default function Tracker() {
   return (
     <main>
       <div className="nav">
@@ -36,7 +36,7 @@ export default function Home() {
       </div>
 
       <div className="hero">
-        <h1>Manipal OSF</h1>
+        <h1>Tracker</h1>
       </div>
 
       <div className="content">
