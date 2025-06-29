@@ -1,23 +1,32 @@
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: #000;
-  color: white; 
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #0d0c0c;
+    --color-secondary: #292929;
+    --color-accent: #EE441C;
+    --color-background: #000;
+
+    --font-geist-sans: 'Geist', sans-serif;
+    --font-geist-mono: 'Geist Mono', monospace;
+    --font-jetbrains-mono: 'JetBrains Mono', monospace;
+    --font-outfit: 'Outfit', sans-serif;
+    --font-inter: 'Inter', sans-serif;
 }
 
-.nav {
-    position: fixed;
-    top: 0;
-    width: 97vw;
-    height: 7.5vh;
-    padding-left: 1.5vw;
-    padding-right: 1.5vw;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    z-index: 100;
-    background: rgba(0, 0, 0, 0.3); 
-    backdrop-filter: blur(10px); 
+@layer base {
+    body {
+        background-color: var(--color-primary);
+        font-family: 'Inter', sans-serif;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        position: relative;
+    }
 }
 
 .logo {
@@ -29,7 +38,7 @@ body {
     height: 50px;
     width: auto;
     display: block;
-    filter: brightness(1.2) contrast(1.1); 
+    filter: brightness(1.2) contrast(1.1);
 }
 
 .user-profile {
@@ -42,10 +51,10 @@ body {
     width: 120px;
     cursor: pointer;
     border-radius: 50%;
-    object-fit: cover; 
-    filter: brightness(1.1) saturate(1.5) hue-rotate(15deg); 
+    object-fit: cover;
+    filter: brightness(1.1) saturate(1.5) hue-rotate(15deg);
     -webkit-filter: brightness(1.1) saturate(1.5) hue-rotate(15deg);
-    border: 2px solid rgba(238, 68, 28, 0.3); 
+    border: 2px solid rgba(238, 68, 28, 0.3);
 }
 
 .profile-hero {
@@ -61,13 +70,13 @@ body {
     margin: 0;
     font-size: 15vw;
     font-weight: 300;
-    background: linear-gradient(91deg, #FF6B4A 22.18%, #EE441C 99.55%); 
-    background-size: 250% 100%;  
+    background: linear-gradient(91deg, #FF6B4A 22.18%, #EE441C 99.55%);
+    background-size: 250% 100%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shimmer 5s ease-in-out infinite;
-    text-shadow: 0 0 30px rgba(255, 107, 74, 0.5); 
+    text-shadow: 0 0 30px rgba(255, 107, 74, 0.5);
 }
 
 .navbutt {
@@ -84,12 +93,12 @@ body {
     justify-content: center;
     text-decoration: none;
     font-size: 1.5vw;
-    color: #FF6B4A; 
+    color: #FF6B4A;
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: 8px;
     transition: all 0.3s ease;
-    text-shadow: 0 0 10px rgba(255, 107, 74, 0.3); 
+    text-shadow: 0 0 10px rgba(255, 107, 74, 0.3);
 }
 
 .navbutt a:hover {
@@ -114,48 +123,38 @@ body {
     height: 0.75vh;
 }
 
-#b0 { backdrop-filter: blur(10px); }
-#b1 { backdrop-filter: blur(9px); }
-#b2 { backdrop-filter: blur(8px); }
-#b3 { backdrop-filter: blur(7px); }
-#b4 { backdrop-filter: blur(6px); }
-#b5 { backdrop-filter: blur(5px); }
-#b6 { backdrop-filter: blur(4px); }
-#b7 { backdrop-filter: blur(3px); }
-#b8 { backdrop-filter: blur(2px); }
-#b9 { backdrop-filter: blur(1px); }
-
 .hero {
     position: relative;
     height: 100vh;
     display: flex;
-    align-items: flex-end; 
+    align-items: flex-end;
     padding-left: 5vw;
-    padding-bottom: 10vh; 
+    padding-bottom: 10vh;
 }
 
 .hero h1 {
     margin: 0;
     font-size: 15vw;
     font-weight: 300;
-    background: linear-gradient(91deg, #FF6B4A 22.18%, #EE441C 99.55%); 
+    background: linear-gradient(91deg, #FF6B4A 22.18%, #EE441C 99.55%);
     background-size: 250% 100%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shimmer 5s ease-in-out infinite;
-    text-shadow: 0 0 30px rgba(255, 107, 74, 0.5); 
+    text-shadow: 0 0 30px rgba(255, 107, 74, 0.5);
 }
 
 .content {
     height: 100vh;
-    color: white; 
+    color: white;
 }
 
 @keyframes shimmer {
     0% {
         background-position: -250% 0;
     }
+
     100% {
         background-position: 250% 0;
     }
@@ -181,23 +180,4 @@ body {
 
 *::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(91deg, #FF6B4A 22.18%, #EE441C 99.55%);
-}
-
-h1, h2, h3, h4, h5, h6, p, span, div {
-    color: inherit;
-}
-
-.nav {
-    animation: navFadeIn 1s ease-out;
-}
-
-@keyframes navFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
