@@ -12,10 +12,10 @@ interface CardProps{
 const TeamMember = (props: CardProps)=>{
     return (
         <>
-            <div className="cardbase">
+            <div className="cardbase p-2">
                 <div className="shine"></div>
                 <img src={props.image} alt='Profile Image' onContextMenu={(e)=>{e.preventDefault()}} draggable={false}  className="w-290 rounded-2xl"></img>
-                <div className="flex items-center text-center mt-5 ml-4">
+                <div className="flex items-center mt-5 ml-4">
                     <div>
                         <strong>
                             <p className="text-xl text-[#FF6B4A]">{props.name}</p>
