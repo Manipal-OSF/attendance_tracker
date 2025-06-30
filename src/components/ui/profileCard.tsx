@@ -21,7 +21,11 @@ const TeamMember = (props: CardProps)=>{
                         </strong>
                         <p className="text-[#EE441C]">{props.role}</p>
                     </div>
-                    <button onClick={()=>window.open(props.GitHublink, '_blank')} className="flex mr-2 justify-center items-center cursor-pointer ml-auto w-18 bg-[#111111] rounded-lg h-11">
+                    <button
+                        onClick={()=>window.open(props.GitHublink, '_blank')}
+                        className="flex mr-2 justify-center items-center cursor-pointer ml-auto w-18 bg-[#111111] rounded-lg h-11"
+                        aria-label="Open GitHub profile"
+                    >
                         <img src="/githublogo.png" alt="GitHub logo" onContextMenu={(e) => { e.preventDefault(); }} draggable={false} className="w-8 rounded-xl" />
                     </button>
                 </div>
