@@ -1,17 +1,17 @@
 "use client";
 
+import clsx from 'clsx';
 import Link from 'next/link';
 import { useState } from 'react';
-import { usePathname } from 'next/navigation';
 import { motion } from 'motion/react';
+import { usePathname } from 'next/navigation';
 import { NAVBAR_ITEMS } from '@/utils/utils';
 
-const FadeIn = ({ children, delay = 0, className, ...props }) => (
+const FadeIn = ({ children, delay = 0, ...props }) => (
     <motion.div
         initial={{ opacity: 0, scale: 0.95, filter: 'blur(5px)' }}
         animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
         transition={{ delay, type: 'tween', duration: 0.4, ease: 'easeOut' }}
-        className={className}
         {...props}
     >
         {children}
@@ -32,7 +32,10 @@ const NavItem = ({ route, label, icon, isActive, index }) => (
     <SlideIn delay={index * 0.07}>
         <Link
             href={route}
-            className={`flex items-center gap-x-1.5 text-sm font-outfit tracking-wider uppercase ${isActive ? 'text-white' : 'text-white/60 hover:text-white'} cursor-pointer`}
+            className={clsx(
+                'flex items-center gap-x-1.5 text-sm font-outfit tracking-wider uppercase',
+                isActive ? 'text-white' : 'text-white/60 hover:text-white'
+            )}
         >
             <span>{icon}</span>
 
@@ -41,7 +44,7 @@ const NavItem = ({ route, label, icon, isActive, index }) => (
                 <span
                     className="absolute left-0 right-0 -bottom-1 h-[1.5px] bg-white 
                     rounded-full opacity-0 scale-x-0 group-hover:opacity-100 
-                    group-hover:scale-x-100 transition-transform duration-300 origin-center"
+                    group-hover:scale-x-100 transition-all duration-300 origin-center pointer-events-none"
                 />
             </span>
         </Link>
@@ -63,12 +66,16 @@ const AuthSection = ({ user }) => {
     }
 
     return (
-        <div className='hidden md:flex items-center h-10 bg-secondary/45 backdrop-blur-md rounded-[14px] text-gray-300'>
+        <div className='hidden md:flex items-center h-10 bg-secondary/45 backdrop-blur-md rounded-[14px] text-white/80'>
             <FadeIn whileHover={{ textShadow: '0px 0px 7px rgba(255,255,255,0.5)' }}>
-                <Link href={'/auth/login'} className="px-3 py-2 font-jetbrains-mono">
+                <Link
+                    href="/auth/login"
+                    className="px-3 h-full flex items-center text-sm font-jetbrains-mono"
+                >
                     Log In
                 </Link>
             </FadeIn>
+
             <div
                 className="flex items-center group"
                 onMouseEnter={() => setIsHovered(true)}
@@ -78,14 +85,15 @@ const AuthSection = ({ user }) => {
                     initial={{ scaleY: 0, opacity: 0 }}
                     animate={{ scaleY: isHovered ? 0 : 1, opacity: isHovered ? 0 : 1 }}
                     transition={{ type: 'spring', stiffness: 140, damping: 18 }}
-                    className="h-5 w-[1px] bg-white/10 mr-1 origin-center"
+                    className="h-5 w-[1px] bg-white/10 origin-center"
                 />
-                <FadeIn>
+
+                <FadeIn className="h-10">
                     <Link
                         href="/auth/register"
-                        className="px-3.5 py-2 h-10 flex overflow-visible rounded-[14px] group-hover:bg-black transition-all"
+                        className="px-3.5 h-full flex items-center rounded-[14px] group-hover:bg-black transition-all text-sm"
                     >
-                        <span className="text-base font-jetbrains-mono font-bold group-hover:text-white transition-all">
+                        <span className="font-jetbrains-mono font-bold group-hover:text-white transition-all">
                             Get Started
                         </span>
                     </Link>
@@ -102,19 +110,16 @@ const Navbar = () => {
     return (
         <nav className='fixed w-full py-6 px-20 z-50'>
             <div className="flex items-center justify-between">
-                <FadeIn className='flex-1 flex font-geist-mono tracking-wider'>
-                    <Link
-                        href={'/'}
-                        className='flex items-center gap-x-4 bg-secondary/45 rounded-[14px] py-2 px-4 backdrop-blur-md'
-                    >
-                        <img src="/logo.png" alt="OSF Logo" className='h-10' />
-                        <div className='text-accent font-medium text-xl'>
-                            Manipal OSF
-                        </div>
-                    </Link>
-                </FadeIn>
+                <div className='flex-1 flex'>
+                    <FadeIn className="font-geist-mono tracking-wider backdrop-blur-md rounded-[14px]">
+                        <Link href="/" className="flex items-center gap-x-4 bg-secondary/45 rounded-[14px] py-2 px-4 backdrop-blur-md">
+                            <img src="/logo.png" alt="OSF Logo" className="h-10" />
+                            <div className="text-accent font-medium text-xl">Manipal OSF</div>
+                        </Link>
+                    </FadeIn>
+                </div>
 
-                <div className='hidden md:flex justify-center bg-secondary/45 rounded-[14px] py-2.5 px-4 backdrop-blur-md'>
+                <div className='hidden md:flex justify-center bg-secondary/45 rounded-2xl py-2.5 px-4 backdrop-blur-md'>
                     <ul className='flex gap-x-10 items-center'>
                         {NAVBAR_ITEMS.map(({ route, label, icon }, index) => (
                             <li key={label}>
