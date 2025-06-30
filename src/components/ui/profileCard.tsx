@@ -1,11 +1,12 @@
 'use client'
+
 import "../../app/globals.css";
 
 interface CardProps{
-    image:string;
-    name:string;
-    role:string;
-    GitHublink:string;
+    image: string;
+    name: string;
+    role: string;
+    githubLink: string;
 }
 
 const TeamMember = (props: CardProps)=>{
@@ -22,7 +23,7 @@ const TeamMember = (props: CardProps)=>{
                         <p className="text-[#EE441C]">{props.role}</p>
                     </div>
                     <button
-                        onClick={()=>window.open(props.GitHublink, '_blank')}
+                        onClick={() => window.open(props.githubLink, '_blank')}
                         className="flex mr-2 justify-center items-center cursor-pointer ml-auto w-18 bg-[#111111] rounded-lg h-11"
                         aria-label="Open GitHub profile"
                     >

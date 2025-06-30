@@ -1,18 +1,7 @@
 const BottomBlur = () => {
     return (
-        <div
-            style={{
-                position: 'fixed',
-                left: 0,
-                right: 0,
-                bottom: 0,
-                height: '80px',
-                flex: 'none',
-                pointerEvents: 'none',
-                zIndex: 10,
-            }}
-        >
-            <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
+        <div className="fixed left-0 right-0 bottom-0 h-20 flex-none pointer-events-none z-10">
+            <div className="absolute inset-0 overflow-hidden">
                 {[
                     { zIndex: 1, blur: 0.0546875, start: 0, mid1: 12.5, mid2: 25, end: 37.5 },
                     { zIndex: 2, blur: 0.08203125, start: 6.25, mid1: 18.75, mid2: 31.25, end: 43.75 }, // avg(1,2)
