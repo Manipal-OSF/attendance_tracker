@@ -13,43 +13,20 @@ const TeamMember = (props: CardProps)=>{
         <>
             <div className="cardbase">
                 <div className="shine"></div>
-                <img src={props.image} alt='Profile Image' onContextMenu={(e)=>{e.preventDefault()}} draggable={false} style={{
-                    margin: '10px', 
-                    width: '290px', 
-                    borderRadius: '15px'
-                }}></img>
-                <div style={{
-                    display: "flex", 
-                    alignItems: "center", 
-                    margin: '10px', 
-                    marginTop: '15px'
-                }}>
+                <img src={props.image} alt='Profile Image' onContextMenu={(e)=>{e.preventDefault()}} draggable={false}  className="w-290 rounded-2xl"></img>
+                <div className="flex items-center text-center mt-5 ml-4">
                     <div>
                         <strong>
-                            <p style={{
-                                color: '#FF6B4A', 
-                                fontSize: '20px',
-                            }}>{props.name}</p>
+                            <p className="text-xl text-[#FF6B4A]">{props.name}</p>
                         </strong>
-                        <p style={{color: '#EE441C'}}>{props.role}</p>
+                        <p className="text-[#EE441C]">{props.role}</p>
                     </div>
-                    <button onClick={()=>window.open(props.GitHublink, '_blank')} style={{
-                        backgroundColor: "#111111",
-                        width: "70px",
-                        height: "45px",
-                        borderRadius: "7px",
-                        border: 'none', 
-                        boxShadow: '0',
-                        marginLeft: 'auto',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems:'center',
-                        justifyContent: 'center'
-                    }}>
-                        <img src="/githublogo.png" alt='GitHub logo' onContextMenu={(e)=>{e.preventDefault()}} draggable={false} style={{
-                            width: "35px", 
-                            borderRadius: "40px", 
-                        }} />
+                    <button
+                        onClick={()=>window.open(props.GitHublink, '_blank')}
+                        className="flex mr-2 justify-center items-center cursor-pointer ml-auto w-18 bg-[#111111] rounded-lg h-11"
+                        aria-label="Open GitHub profile"
+                    >
+                        <img src="/githublogo.png" alt="GitHub logo" onContextMenu={(e) => { e.preventDefault(); }} draggable={false} className="w-8 rounded-xl" />
                     </button>
                 </div>
             </div>
