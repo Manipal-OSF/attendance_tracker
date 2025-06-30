@@ -7,3 +7,14 @@ const NAVBAR_ITEMS = [
 ]
 
 export { NAVBAR_ITEMS}
+
+const TEAM = [
+  { image: "/pu.png", name: "Pranav Unni", role: "Gang Leader", githubLink: "https://github.com/PranavU-Coder" },
+  { image: "/pain.jpg", name: "Honored One", role: "Gang Co-Leader", githubLink: "https://github.com/FirezTheGreat" },
+  { image: "/cv.webp", name: "Chatur Vasireddy", role: "Gang Co-Leader", githubLink: "https://github.com/ChaturVasireddy" },
+  { image: "/pk.png", name: "Pranav Kumar", role: "Gang Member", githubLink: "https://github.com/Pranav-Kumar14" },
+  { image: "/ph.png", name: "PixelHalide", role: "Gang Member", githubLink: "https://github.com/PixelHalide" },
+  { image: "/bac.webp", name: "bang-a-cat", role: "Gang Member", githubLink: "https://github.com/bongacat" },
+  { image: "/ad.png", name: "Orca", role: "Gang Member", githubLink: "https://github.com/ObnoxiousOrca"}
+]
+export {TEAM};

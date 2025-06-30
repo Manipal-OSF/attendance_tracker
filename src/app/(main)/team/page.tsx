@@ -1,4 +1,6 @@
-import TeamMember from "@/components/ui/ProfileCard";
+'use client'
+import TeamMember from "@/components/ui/profileCard";
+import {TEAM} from "@/utils/utils";
 
 export default function Team() {
   return (
@@ -8,56 +10,16 @@ export default function Team() {
       </div>
       <div className="h-screen text-white">
         <div className="flex flex-wrap gap-3 justify-center p-5">
-
-          <TeamMember
-            image="/pu.png"
-            name = "Pranav Unni"
-            role="Gang Leader"
-            githubLink="https://github.com/PranavU-Coder"
-          />
-
-          <TeamMember
-            image="/pain.jpg"
-            name="Honored One"
-            role="Gang Co-Leader"
-            githubLink="https://github.com/FirezTheGreat"
-          />
-
-          <TeamMember
-            image="/cv.webp"
-            name="Chatur Vasireddy"
-            role="Gang Co-Leader"
-            githubLink="https://github.com/ChaturVasireddy"
-          />
-
-          <TeamMember
-            image="/pk.png"
-            name="Pranav Kumar"
-            role="Gang Member"
-            githubLink="https://github.com/Pranav-Kumar14"
-          />
-
-          <TeamMember
-            image="/ph.png"
-            name="PixelHalide"
-            role="Gang Member"
-            githubLink="https://github.com/PixelHalide"
-          />
-
-          <TeamMember
-            image="/bac.webp"
-            name="bang-a-cat"
-            role="Gang Member"
-            githubLink="https://github.com/bongacat"
-          />
-
-          <TeamMember
-            image="/ad.png"
-            name = "Orca"
-            role="Gang Member"
-            githubLink="https://github.com/ObnoxiousOrca"
-          />
-
+          
+          {TEAM.map((member) => (
+              <TeamMember
+                key={member.name}
+                image={member.image}
+                name={member.name}
+                role={member.role}
+                githubLink={member.githubLink}
+              />
+          ))}
         </div>
       </div>
     </main>
