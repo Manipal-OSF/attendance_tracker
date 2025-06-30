@@ -181,3 +181,51 @@
 *::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(91deg, #FF6B4A 22.18%, #EE441C 99.55%);
 }
+
+
+.cardbase {
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin: 20px;
+    display: block; 
+    height: 410px;
+    max-width: 310px;
+    border-radius: 15px;
+    background: linear-gradient(to bottom,rgb(89, 89, 89),rgb(34, 34, 34));
+}
+
+.cardbase:hover {
+    transform: scale(1.08);
+}
+
+.cardbase::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        80deg,
+        transparent 30%,
+        rgba(255, 100, 0, 0.3) 50%,
+        transparent 60%
+    );
+    transform: rotate(0deg);
+    animation: shineMove 4s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+.cardbase *{
+    position: relative;
+    z-index: 1;
+}
+@keyframes shineMove {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
