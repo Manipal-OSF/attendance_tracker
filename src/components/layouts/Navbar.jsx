@@ -52,9 +52,11 @@ const NavItem = ({ route, label, icon, isActive, index }) => (
 
 const AuthSection = ({ user }) => {
     if (user) {
-        // Backend needs to fetch user data to determine if the user has a profile picture
-        // For now, we have a placeholder image
-        // Replace with actual user profile picture URL when available
+        /*
+            Backend needs to fetch user data to determine if the user has a profile picture
+            For now, we have a placeholder image
+            Replace with actual user profile picture URL when available
+        */
         return (
             <Link href="/profile" className="relative top-0.5 h-11 w-11 overflow-hidden">
                 <img src="/user_icon.png" alt="User Profile" className="scale-[1.8] object-contain" />
@@ -63,18 +65,18 @@ const AuthSection = ({ user }) => {
     }
 
     return (
-        <div className='hidden md:flex items-center h-10 bg-secondary/45 backdrop-blur-md rounded-[14px] text-white/80 group'>
-            <FadeIn>
-                <Link
-                    href="/auth/login"
-                    className="px-3 h-full flex items-center text-sm font-jetbrains-mono hover:drop-shadow-[0_0_7px_rgba(255,255,255,0.5)] transition-all"
-                >
+        <div className='hidden md:flex items-center h-10 bg-secondary/45 backdrop-blur-md rounded-[14px] text-white/80'>
+            <Link
+                href="/auth/login"
+                className="px-3 h-full flex items-center text-sm font-jetbrains-mono hover:drop-shadow-[0_0_7px_rgba(255,255,255,0.5)] transition-all duration-300"
+            >
+                <FadeIn>
                     Log In
-                </Link>
-            </FadeIn>
+                </FadeIn>
+            </Link>
 
-            <div className="flex items-center">
-                <div className="h-5 w-[1px] bg-white/10 origin-center transition-all duration-300 group-hover:scale-y-0 group-hover:opacity-0" />
+            <div className="flex items-center group">
+                <div className="h-5 w-px bg-white/10 origin-center transform transition-all duration-300 ease-in-out group-hover:h-0 group-hover:opacity-0" />
 
                 <FadeIn className="h-10">
                     <Link
