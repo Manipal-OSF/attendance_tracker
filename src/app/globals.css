@@ -1,3 +1,4 @@
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@300,301,400,401,500,501,700,701,900,901,1,2&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -11,6 +12,7 @@
     --font-jetbrains-mono: 'JetBrains Mono', monospace;
     --font-outfit: 'Outfit', sans-serif;
     --font-inter: 'Inter', sans-serif;
+    --font-satoshi: 'Satoshi', sans-serif;
 }
 
 @layer base {
@@ -184,6 +186,7 @@
 
 
 .cardbase {
+    font-family: 'Satoshi', sans-serif;
     transition: transform 0.3s ease;
     position: relative;
     overflow: hidden;

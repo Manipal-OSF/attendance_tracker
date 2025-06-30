@@ -12,7 +12,6 @@ const TeamMember = (props: CardProps)=>{
     return (
         <>
             <div className="cardbase">
-                <div className="shine"></div>
                 <img src={props.image} alt='Profile Image' onContextMenu={(e)=>{e.preventDefault()}} draggable={false} style={{
                     margin: '10px', 
                     width: '290px', 
@@ -26,12 +25,12 @@ const TeamMember = (props: CardProps)=>{
                 }}>
                     <div>
                         <strong>
-                            <p style={{
+                            <p className="name" style={{
                                 color: '#FF6B4A', 
                                 fontSize: '20px',
                             }}>{props.name}</p>
                         </strong>
-                        <p style={{color: '#EE441C'}}>{props.role}</p>
+                        <p className="role" style={{color: '#EE441C'}}>{props.role}</p>
                     </div>
                     <button onClick={()=>window.open(props.GitHublink, '_blank')} style={{
                         backgroundColor: "#111111",

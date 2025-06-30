@@ -1,5 +1,5 @@
 
-import { Geist, Geist_Mono, JetBrains_Mono, Outfit, Inter } from 'next/font/google';
+import { Geist, Geist_Mono, JetBrains_Mono, Outfit, Inter} from 'next/font/google';
 
 const geistSans = Geist({
   subsets: ['latin'],
