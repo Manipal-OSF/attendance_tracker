@@ -123,33 +123,6 @@
     height: 0.75vh;
 }
 
-.hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: flex-end;
-    padding-left: 5vw;
-    padding-bottom: 10vh;
-}
-
-.hero h1 {
-    margin: 0;
-    font-size: 15vw;
-    font-weight: 300;
-    background: linear-gradient(91deg, #FF6B4A 22.18%, #EE441C 99.55%);
-    background-size: 250% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 5s ease-in-out infinite;
-    text-shadow: 0 0 30px rgba(255, 107, 74, 0.5);
-}
-
-.content {
-    height: 100vh;
-    color: white;
-}
-
 @keyframes shimmer {
     0% {
         background-position: -250% 0;
@@ -188,7 +161,7 @@
     position: relative;
     overflow: hidden;
     margin: 20px;
-    display: block; 
+    display: block;
     height: 410px;
     max-width: 310px;
     border-radius: 15px;
