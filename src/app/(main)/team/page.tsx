@@ -17,7 +17,7 @@ export default function Team() {
                 image={member.image}
                 name={member.name}
                 role={member.role}
-                GitHublink={member.GitHublink}
+                githubLink={member.githubLink}
               />
           ))}
 

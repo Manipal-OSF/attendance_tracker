@@ -5,7 +5,7 @@ interface CardProps{
     image:string;
     name:string;
     role:string;
-    GitHublink:string;
+    githubLink:string;
 }
 
 const TeamMember = (props: CardProps)=>{
@@ -32,7 +32,7 @@ const TeamMember = (props: CardProps)=>{
                         </strong>
                         <p className="role" style={{color: '#EE441C'}}>{props.role}</p>
                     </div>
-                    <button onClick={()=>window.open(props.GitHublink, '_blank')} style={{
+                    <button onClick={()=>window.open(props.githubLink, '_blank')} style={{
                         backgroundColor: "#111111",
                         width: "70px",
                         height: "45px",
