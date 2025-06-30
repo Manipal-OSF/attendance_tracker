@@ -1,8 +1,7 @@
-"use client";
+'use client'
 
 import clsx from 'clsx';
 import Link from 'next/link';
-import { useState } from 'react';
 import { motion } from 'motion/react';
 import { usePathname } from 'next/navigation';
 import { NAVBAR_ITEMS } from '@/utils/utils';
@@ -42,8 +41,8 @@ const NavItem = ({ route, label, icon, isActive, index }) => (
             <span className='relative group'>
                 {label}
                 <span
-                    className="absolute left-0 right-0 -bottom-1 h-[1.5px] bg-white 
-                    rounded-full opacity-0 scale-x-0 group-hover:opacity-100 
+                    className="absolute left-0 right-0 -bottom-1 h-[1.5px] bg-white
+                    rounded-full opacity-0 scale-x-0 group-hover:opacity-100
                     group-hover:scale-x-100 transition-all duration-300 origin-center pointer-events-none"
                 />
             </span>
@@ -52,12 +51,12 @@ const NavItem = ({ route, label, icon, isActive, index }) => (
 );
 
 const AuthSection = ({ user }) => {
-    const [isHovered, setIsHovered] = useState(false);
-
     if (user) {
-        // Backend needs to fetch user data to determine if the user has a profile picture
-        // For now, we have a placeholder image
-        // Replace with actual user profile picture URL when available
+        /*
+            Backend needs to fetch user data to determine if the user has a profile picture
+            For now, we have a placeholder image
+            Replace with actual user profile picture URL when available
+        */
         return (
             <Link href="/profile" className="relative top-0.5 h-11 w-11 overflow-hidden">
                 <img src="/user_icon.png" alt="User Profile" className="scale-[1.8] object-contain" />
@@ -67,31 +66,22 @@ const AuthSection = ({ user }) => {
 
     return (
         <div className='hidden md:flex items-center h-10 bg-secondary/45 backdrop-blur-md rounded-[14px] text-white/80'>
-            <FadeIn whileHover={{ textShadow: '0px 0px 7px rgba(255,255,255,0.5)' }}>
-                <Link
-                    href="/auth/login"
-                    className="px-3 h-full flex items-center text-sm font-jetbrains-mono"
-                >
-                    Log In
-                </Link>
-            </FadeIn>
-
-            <div
-                className="flex items-center group"
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
+            <Link
+                href="/auth/login"
+                className="px-3 h-full flex items-center text-sm font-jetbrains-mono hover:drop-shadow-[0_0_7px_rgba(255,255,255,0.5)] transition-all duration-300"
             >
-                <motion.div
-                    initial={{ scaleY: 0, opacity: 0 }}
-                    animate={{ scaleY: isHovered ? 0 : 1, opacity: isHovered ? 0 : 1 }}
-                    transition={{ type: 'spring', stiffness: 140, damping: 18 }}
-                    className="h-5 w-[1px] bg-white/10 origin-center"
-                />
+                <FadeIn>
+                    Log In
+                </FadeIn>
+            </Link>
+
+            <div className="flex items-center group">
+                <div className="h-5 w-px bg-white/10 origin-center transform transition-all duration-300 ease-in-out group-hover:h-0 group-hover:opacity-0" />
 
                 <FadeIn className="h-10">
                     <Link
                         href="/auth/register"
-                        className="px-3.5 h-full flex items-center rounded-[14px] group-hover:bg-black transition-all text-sm"
+                        className="px-3.5 h-full flex items-center rounded-[14px] hover:bg-black transition-all text-sm group"
                     >
                         <span className="font-jetbrains-mono font-bold group-hover:text-white transition-all">
                             Get Started

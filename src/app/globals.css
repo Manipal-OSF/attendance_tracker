@@ -5,7 +5,6 @@
     --color-primary: #0d0c0c;
     --color-secondary: #292929;
     --color-accent: #EE441C;
-    --color-background: #000;
 
     --font-geist-sans: 'Geist', sans-serif;
     --font-geist-mono: 'Geist Mono', monospace;
@@ -29,18 +28,6 @@
         width: 100%;
         position: relative;
     }
-}
-
-.logo {
-    grid-column: 1;
-    justify-self: start;
-}
-
-.logo img {
-    height: 50px;
-    width: auto;
-    display: block;
-    filter: brightness(1.2) contrast(1.1);
 }
 
 .user-profile {
@@ -81,77 +68,6 @@
     text-shadow: 0 0 30px rgba(255, 107, 74, 0.5);
 }
 
-.navbutt {
-    grid-column: 2;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    align-items: center;
-}
-
-.navbutt a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 1.5vw;
-    color: #FF6B4A;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    text-shadow: 0 0 10px rgba(255, 107, 74, 0.3);
-}
-
-.navbutt a:hover {
-    color: #FFFFFF;
-    background: rgba(238, 68, 28, 0.2);
-    text-shadow: 0 0 15px rgba(255, 107, 74, 0.6);
-    transform: translateY(-2px);
-}
-
-.navblur {
-    position: fixed;
-    height: 7.5vh;
-    top: 0;
-    width: 100vw;
-    z-index: 99;
-    display: flex;
-    flex-direction: column;
-}
-
-.b {
-    width: 100vw;
-    height: 0.75vh;
-}
-
-.hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: flex-end;
-    padding-left: 5vw;
-    padding-bottom: 10vh;
-}
-
-.hero h1 {
-    margin: 0;
-    font-size: 15vw;
-    font-weight: 300;
-    background: linear-gradient(91deg, #FF6B4A 22.18%, #EE441C 99.55%);
-    background-size: 250% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 5s ease-in-out infinite;
-    text-shadow: 0 0 30px rgba(255, 107, 74, 0.5);
-}
-
-.content {
-    height: 100vh;
-    color: white;
-}
-
 @keyframes shimmer {
     0% {
         background-position: -250% 0;
@@ -164,7 +80,7 @@
 
 * {
     scrollbar-width: thin;
-    scrollbar-color: #EE441C #000;
+    scrollbar-color: var(--color-accent) #000;
 }
 
 *::-webkit-scrollbar {
@@ -191,11 +107,11 @@
     position: relative;
     overflow: hidden;
     margin: 20px;
-    display: block; 
+    display: block;
     height: 410px;
     max-width: 310px;
     border-radius: 15px;
-    background: linear-gradient(to bottom,rgb(89, 89, 89),rgb(34, 34, 34));
+    background: linear-gradient(to bottom, rgb(89, 89, 89), rgb(34, 34, 34));
 }
 
 .cardbase:hover {
@@ -209,25 +125,26 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(
-        80deg,
-        transparent 30%,
-        rgba(255, 100, 0, 0.3) 50%,
-        transparent 60%
-    );
+    background: linear-gradient(80deg,
+            transparent 30%,
+            rgba(255, 100, 0, 0.3) 50%,
+            transparent 60%);
     transform: rotate(0deg);
     animation: shineMove 4s linear infinite;
     pointer-events: none;
     z-index: 0;
 }
-.cardbase *{
+
+.cardbase * {
     position: relative;
     z-index: 1;
 }
+
 @keyframes shineMove {
     0% {
         transform: translateX(-100%) translateY(-100%) rotate(45deg);
     }
+
     100% {
         transform: translateX(100%) translateY(100%) rotate(45deg);
     }

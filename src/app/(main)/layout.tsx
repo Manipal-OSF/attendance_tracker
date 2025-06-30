@@ -1,4 +1,4 @@
-import { Vortex } from "../../components/ui/vortex";
+import { Vortex } from "../../components/ui/Vortex";
 import Navbar from "../../components/layouts/Navbar";
 import BottomBlur from "../../components/layouts/BottomBlur";
 import type { Viewport } from "next";
